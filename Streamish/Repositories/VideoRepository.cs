@@ -147,7 +147,7 @@ namespace Streamish.Repositories
                         up.ImageUrl AS UserProfileImageUrl                      
                         FROM Video v 
                         JOIN UserProfile up ON v.UserProfileId = up.Id
-                        Where v.Id = 1
+                        Where v.Id = @Id
                     ";
 
                     DbUtils.AddParameter(cmd, "@Id", id);
