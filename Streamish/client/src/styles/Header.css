@@ -1,0 +1,14 @@
+.headerMain
+{
+    display:flex;
+    align-items: center;
+    gap:50px;
+    background-color: blue;
+    color: white;
+    padding-left:20px;
+    
+}
+.headerSearch
+{
+    display:flex;
+}
