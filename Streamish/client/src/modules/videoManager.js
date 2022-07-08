@@ -1,6 +1,6 @@
 const baseUrl = '/api/video';
 const commentsUrl ='/api/Video/GetWithComments';
-const searchUrl = 'api/Video/search';
+let searchUrl = '/api/Video/search';
 
 export const getAllVideos = () => {
   return fetch(baseUrl)
@@ -23,6 +23,7 @@ export const addVideo = (video) => {
 };
 
 export const getVideoSearchResults = (queryString, boolean) => {
+  searchUrl +=`?q=${queryString}&sortDesc=${boolean}`;
   return fetch(searchUrl)
     .then((res) => res.json())
 }

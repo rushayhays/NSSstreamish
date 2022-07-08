@@ -14,21 +14,26 @@ const VideoList = () => {
     getVideos();
   }, []);
 
-  const getSearchedVideos = () => {
-    getVideoSearchResults().then(videos => setVideos(videos));
+  const getSearchedVideos = (stringParam, boolParam) => {
+    getVideoSearchResults(stringParam, boolParam).then(videos => {
+      console.log(videos)
+      setVideos(videos)});
+    console.log("searched videos ran");
   };
 
   const runVideoSearch = () =>{
     let queryString = document.getElementById("vSearch");
+    let string = queryString.value
     console.log(queryString.value)
-    console.log("you found the McGuffin!")
+    let boolElement = false;
+    getSearchedVideos(string, boolElement);
   }
 
   return (
     <div>
-      <div class="videoSearch">
+      <div className="videoSearch">
         <div>
-          <label for="vSearch"></label>
+          <label htmlFor="vSearch"></label>
           <input type="text" id="vSearch"></input>
         </div>
         <div>

@@ -4,6 +4,8 @@ import Comment from "./Comment.js";
 
 
 const Video = ({ video }) => {
+
+
   return (
     <Card >
       <p className="text-left px-2">Posted by: {video.userProfile.name}</p>
@@ -20,9 +22,9 @@ const Video = ({ video }) => {
         </p>
         <p>{video.description}</p>
         <div className="row justify-content-center">
-            {video.comments.map((comment) => (
-            <Comment comment={comment} key={comment.id} />
-            ))}
+          {video.comments == null?<p>emptyspace</p>:video.comments.map((comment) => (
+            <Comment comment={comment} key={comment.id} />))
+          } 
         </div>
       </CardBody>
     </Card>
