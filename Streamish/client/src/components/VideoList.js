@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Video from './Video';
 import { getAllVideos, getAllWithComments, getVideoSearchResults } from "../modules/videoManager";
+import VideoForm from './VideoForm';
 import "../styles/VideoList.css";
 
 const VideoList = () => {
@@ -16,7 +17,6 @@ const VideoList = () => {
 
   const getSearchedVideos = (stringParam, boolParam) => {
     getVideoSearchResults(stringParam, boolParam).then(videos => {
-      console.log(videos)
       setVideos(videos)});
     console.log("searched videos ran");
   };
@@ -24,7 +24,6 @@ const VideoList = () => {
   const runVideoSearch = () =>{
     let queryString = document.getElementById("vSearch");
     let string = queryString.value
-    console.log(queryString.value)
     let boolElement = false;
     getSearchedVideos(string, boolElement);
   }
@@ -39,6 +38,9 @@ const VideoList = () => {
         <div>
           <button onClick={runVideoSearch}>Search</button>
         </div>
+      </div>
+      <div className="videoFormContainer">
+        <VideoForm getVideoFunction={getVideos}/>
       </div>
       
       <div className="container">
