@@ -29,7 +29,8 @@ export const getVideoSearchResults = (queryString, boolean) => {
 }
 
 
-
+//This gets a single video with all of its comments
 export const getVideo = (id) => {
   return fetch(`${baseUrl}/GetVideoWithComments${id}`).then((res) => res.json());
 };
+

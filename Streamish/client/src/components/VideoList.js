@@ -18,7 +18,6 @@ const VideoList = () => {
   const getSearchedVideos = (stringParam, boolParam) => {
     getVideoSearchResults(stringParam, boolParam).then(videos => {
       setVideos(videos)});
-    console.log("searched videos ran");
   };
 
   const runVideoSearch = () =>{

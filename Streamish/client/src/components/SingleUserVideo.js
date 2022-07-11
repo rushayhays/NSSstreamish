@@ -4,15 +4,13 @@ import Comment from "./Comment.js";
 import { Link } from "react-router-dom";
 
 
-const Video = ({ video }) => {
+const SingleUserVideo = ({ video }) => {
 
   return (
     <Card >
 
       <p className="text-left px-2">
-        <Link to={`/users/${video.userProfile.id}`}>
-          Posted by: {video.userProfile.name}
-        </Link>
+        
       </p>
       <CardBody>
         <iframe className="video"
@@ -40,4 +38,4 @@ const Video = ({ video }) => {
   );
 };
 
-export default Video;
+export default SingleUserVideo;
