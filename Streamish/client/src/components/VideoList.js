@@ -39,9 +39,6 @@ const VideoList = () => {
           <button onClick={runVideoSearch}>Search</button>
         </div>
       </div>
-      <div className="videoFormContainer">
-        <VideoForm getVideoFunction={getVideos}/>
-      </div>
       
       <div className="container">
         <div className="row justify-content-center">

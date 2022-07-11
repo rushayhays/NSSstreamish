@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { addVideo } from "../modules/videoManager";
 
 const VideoForm = ({getVideoFunction}) => {
+
+    const navigate = useNavigate();
 
     const postVideo = () => {
         let title=document.getElementById("vTitle")
@@ -19,12 +22,9 @@ const VideoForm = ({getVideoFunction}) => {
             url: url.value
         }
         //This adds the video to our database and then updates our video list with another call to fetch the full list of videos
-        addVideo(video).then(getVideoFunction())
-        
-        //This section resets the values in the form to blank
-        title.value = "";
-        desc.value = "";
-        url.value = "";
+        addVideo(video).then((p) =>{
+            navigate("/")
+        })
     }
 
     return(
