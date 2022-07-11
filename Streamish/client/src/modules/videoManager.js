@@ -28,3 +28,8 @@ export const getVideoSearchResults = (queryString, boolean) => {
     .then((res) => res.json())
 }
 
+
+
+export const getVideo = (id) => {
+  return fetch(`${baseUrl}/GetVideoWithComments${id}`).then((res) => res.json());
+};

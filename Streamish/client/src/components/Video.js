@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardBody } from "reactstrap";
 import Comment from "./Comment.js";
+import { Link } from "react-router-dom";
 
 
 const Video = ({ video }) => {
@@ -18,8 +19,12 @@ const Video = ({ video }) => {
           allowFullScreen />
 
         <p>
-          <strong>{video.title}</strong>
+          <Link to={`/videos/${video.id}`}>
+            <strong>{video.title}</strong>
+          </Link>
+
         </p>
+        
         <p>{video.description}</p>
         <div className="row justify-content-center">
           {video.comments == null?<p>emptyspace</p>:video.comments.map((comment) => (
